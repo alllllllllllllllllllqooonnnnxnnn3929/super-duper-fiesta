@@ -1,0 +1,530 @@
+<html lang="en"><head>
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="utf-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using @vitejs/plugin-react">
+    <link rel="apple-touch-icon" href="/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <title>React App</title>
+  <style type="text/css" data-vite-dev-id="/workspaces/codespaces-react/src/index.css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css" data-vite-dev-id="/workspaces/codespaces-react/src/App.css">/* Root level font settings */
+:root {
+  --apple-font: -apple-system, "SF Pro AR", "SF Pro Arabic", "SF Pro Display", BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh; /* Make sure App takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This will push footer to bottom */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--apple-font);
+}
+
+.App-header h2 {
+  font-size: 2.8rem; /* Larger font size for the suite heading */
+  color: #222;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  font-family: var(--apple-font); /* Ensure consistent font */
+  border-radius: 10px; /* Match navbar rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  margin: 10px; /* Add margin to align with navbar and footer */
+}
+
+.hero-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--apple-font);
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6b800;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-left: 10px; /* Align with navbar and footer */
+  margin-right: 10px; /* Align with navbar and footer */
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Indicate clickable */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.product-card p.rating {
+  font-size: 0.9rem;
+  color: #ffcc00;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9; /* Slight background change on hover */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .products {
+    gap: 1rem; /* Reduce gap between cards */
+  }
+
+  .product-card {
+    width: calc(50% - 1rem); /* Two cards per row */
+    margin: 0; /* Remove extra margin */
+  }
+}
+
+.download-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+.download-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.heart {
+  color: #ff0000;
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+.navbar-colored {
+  background: #e6e4e4;
+  font-size: 25px;
+  padding: 20px 55px; /* Adjust padding for better alignment */
+  box-shadow: 6px 8px 1px #8f8e8e;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Ensure proper positioning */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.site-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.revolution-flag {
+  width: 30px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 100;
+}
+
+/* Hide the hamburger menu on larger screens */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d3d3d3;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  text-align: left; /* Align menu items to the left for English */
+  direction: ltr;
+}
+
+.menu-large {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .menu-large {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .menu-large ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-large li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: black;
+  }
+
+  .menu-large li:hover {
+    color: #007bff;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+.submenu {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style-type: disc;
+  font-size: 1rem;
+  color: #333;
+}
+
+.submenu li {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.submenu li:hover {
+  color: #007bff;
+}
+
+/* Ensure consistent font usage across the site */
+body {
+  font-family: var(--apple-font); /* Apply the same font globally */
+  margin: 5px; /* Add margin */
+  padding: 0;
+  background-color: #ffffff; /* Default background color */
+  color: #000000; /* Default text color */
+  line-height: 1.6; /* Improve readability */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-colored {
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem; /* Adjust padding for smaller screens */
+    font-size: 1rem; /* Adjust font size */
+    margin: 5px; /* Reduce margin */
+    text-align: left; /* Ensure alignment for smaller screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Adjust heading size */
+    font-family: var(--apple-font);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    text-align: left; /* Align heading for smaller screens */
+  }
+
+  .hamburger .line {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  .menu ul {
+    font-size: 1.5rem; /* Simplify menu font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-colored {
+    padding: 0.25rem 0.25rem 0.25rem 1rem; /* Further adjust padding for very small screens */
+    font-size: 0.9rem; /* Adjust font size */
+    margin: 3px; /* Further reduce margin */
+    text-align: left; /* Ensure alignment for very small screens */
+  }
+
+  h1 {
+    font-size: 1.2rem; /* Adjust heading size for very small screens */
+    font-family: var(--apple-font);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    text-align: left; /* Align heading for very small screens */
+  }
+}
+
+.footer {
+  background-color: #d3d3d3; /* Light Gray - exact same as navbar */
+  color: black;
+  padding: 1rem;
+  font-family: var(--apple-font);
+  font-weight: 500; /* Make the font slightly bolder */
+  letter-spacing: 0.5px; /* Add slight spacing for better readability */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center; /* Center the footer text */
+  margin-top: auto; /* Push to bottom of flex container */
+  direction: ltr; /* Set direction to left-to-right */
+}
+
+/* Add responsive styles for footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    margin: 3px;
+  }
+}
+
+.download-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.app-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.app-details {
+  text-align: left;
+}
+
+.app-rating {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  margin: 0.5rem 0;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.download-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.download-button i {
+  font-size: 1.2rem;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+.download-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-ios::before {
+  content: '🍎'; /* Placeholder for iOS icon */
+}
+
+.icon-android::before {
+  content: '🤖'; /* Placeholder for Android icon */
+}
+
+.icon-windows::before {
+  content: '🖥️'; /* Placeholder for Windows icon */
+}
+
+.app-description {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><nav class="navbar navbar-colored"><div class="site-name"><h1>AliApp</h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Flag_of_the_Syrian_revolution.svg/800px-Flag_of_the_Syrian_revolution.svg.png" alt="Syrian Revolution Flag" class="revolution-flag"></div><div class="menu-large"><ul><li>Home</li><li>Products</li><li>Download</li></ul></div><div class="hamburger"><div class="line "></div><div class="line "></div><div class="line "></div></div><div class="menu "><ul><li>Home</li><li>Products</li><li>Download</li></ul></div></nav><div class="App"><header class="App-header"><div class="download-container"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Flag_of_the_Syrian_revolution.svg/800px-Flag_of_the_Syrian_revolution.svg.png" alt="App Flag" class="app-image"><div class="app-details"><h2>avicalite</h2><div class="app-rating"><span> ()</span></div><div class="download-buttons"><button class="download-button"><img src="https://www.svgrepo.com/download/508761/apple.svg" alt="Apple" class="download-icon">App Store</button><button class="download-button"><img src="https://www.svgrepo.com/show/349588/android.svg" alt="Android" class="download-icon">Play Store</button><button class="download-button"><img src="https://www.svgrepo.com/download/513083/windows-174.svg" alt="Windows" class="download-icon">Windows EXE</button></div><p class="app-description">No description available.</p></div></div></header></div><footer class="footer"><p>© 2023 All rights reserved for AliApp</p></footer></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+  <script type="module" src="/src/index.jsx"></script>
+
+</body></html>
